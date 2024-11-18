@@ -1,0 +1,291 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ 
+    font-family: 'Inter', sans-serif;
+
+}
+
+body {
+    background-color: #1A1A1A;
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+/* Main container styling */
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem; /* Increased gap for better spacing */
+    background: linear-gradient(145deg, #1e1e1e, #3a3a3a); /* Gradient background for depth */
+    padding: 30px;
+    border-radius: 15px; /* More rounded corners */
+    width: 50%;
+    max-width: 600px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Deeper shadow for a lifted effect */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+/* Heading styling */
+h1 {
+    font-size: 2.5rem; /* Larger font size for better impact */
+    color: #f1f1f1;
+    font-weight: 700;
+    text-align: center; /* Centered for better balance */
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Added text shadow for a dramatic effect */
+}
+
+/* User container for vertical layout */
+.user-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Increased spacing for better layout */
+    justify-content: flex-start;
+}
+
+/* Styling for the input-container */
+.user-inpur-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px; /* Increased gap */
+}
+
+/* Styling for the input field */
+#user-input {
+    width: 70%; /* Slightly narrower for better balance */
+    padding: 0.8rem;
+    border-radius: 10px; /* More rounded corners */
+    border: 2px solid #5c5c5c; /* Soft border */
+    background-color: #444444; /* Darker background for input */
+    color: #f1f1f1;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for focus */
+}
+
+/* Focus state for the input field */
+#user-input:focus {
+    border-color: #5cdb95; /* Focus effect with a green border */
+    outline: none;
+    box-shadow: 0 2px 12px rgba(92, 219, 149, 0.6); /* Highlight focus */
+}
+
+/* Styling for the search button */
+#search-btn {
+    padding: 0.8rem 1.2rem;
+    border-radius: 10px; /* More rounded corners */
+    background-color: #5cdb95; /* Fresh green button */
+    border: none;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Added shadow for button */
+}
+
+/* Hover effect for the search button */
+#search-btn:hover {
+    background-color: #4bbf6b; /* Slightly darker green */
+    transform: translateY(-5px); /* Enhanced lift effect */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+}
+
+/* Hover effect for the main container */
+.container:hover {
+    transform: scale(1.03); /* Slightly enlarge the container on hover */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+}
+
+/* Animation for the user input and button on load */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Add spacing for mobile view */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem; /* Adjusted font size for smaller screens */
+    }
+
+    #user-input {
+        width: 65%; /* Adjust input width */
+    }
+
+    #search-btn {
+        width: 100%; /* Full width for button */
+    }
+}
+
+
+/* Styling for the circle container */
+/* Styling for the circle container */
+.circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid #299f5d;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    background: conic-gradient(#299f5d var(--progress-degree, 0%), #283a2e 0%);
+    flex-direction: column;
+    transition: background 0.5s ease; /* Smooth transition for progress change */
+}
+
+/* Styling for the label inside the circle */
+.circle span {
+    position: relative;
+    z-index: 2;
+    font-size: 1.1rem;  /* Slightly larger font for better visibility */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);  /* Subtle shadow for text readability */
+}
+
+/* Styling for the progress container (outside the circle) */
+.progress {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+/* For the label text below the circle */
+.circle .label {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+}
+
+/* Optional: add a shadow effect for better contrast */
+.circle {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+/* Enhance the progress bar on hover */
+.circle:hover {
+    background: conic-gradient(#299f5d 0%, #34cc85 100%);  /* Subtle change in color on hover */
+    cursor: pointer;
+}
+
+
+/* Styling for the overall container */
+/* Main container for the cards */
+.stats-card {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px; /* Increased gap for more spacious layout */
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* Styling for each card container */
+.card {
+    background: linear-gradient(135deg, #e6922c, #f7a84d); /* Gradient background with soft color transition */
+    width: 45%; /* Adjusted width for better layout */
+    max-width: 320px; /* Slightly wider card for better readability */
+    padding: 25px;  /* More padding for a cleaner layout */
+    border-radius: 20px;  /* Rounded corners for modern look */
+    font-size: 1.1rem;  /* Slightly increased font size */
+    min-height: 4.5rem;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12); /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    overflow: hidden; /* Prevents content from overflowing */
+}
+
+/* Hover effect on card */
+.card:hover {
+    transform: translateY(-10px);  /* Lift card effect */
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);  /* Stronger shadow on hover */
+}
+
+/* Title styling inside the card */
+.card h4 {
+    font-size: 1.3rem;  /* Slightly larger title */
+    font-weight: 700;  /* Bold title for emphasis */
+    margin-bottom: 15px;  /* Extra spacing under title */
+    color: #fff;  /* White text for contrast */
+    letter-spacing: 1px;  /* Slightly increased letter-spacing for a cleaner look */
+}
+
+/* Styling for the main content inside the card */
+.card p {
+    font-size: 1rem;
+    color: #fff;  /* White text */
+    margin-top: 15px;  /* Extra spacing above content */
+    line-height: 1.5;  /* Line height for better readability */
+}
+
+/* Small text inside the card (for secondary info) */
+.card .small-text {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.8);  /* Lighter text for secondary information */
+    margin-top: 8px;
+    font-style: italic; /* Slightly italicized for a softer tone */
+}
+
+/* Add animation to make cards fade-in smoothly */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .stats-card {
+        gap: 20px; /* Decreased gap on smaller screens */
+    }
+
+    .card {
+        width: 80%; /* Adjust width for smaller screens */
+        padding: 20px;  /* Adjust padding for mobile view */
+    }
+
+    .card h4 {
+        font-size: 1.2rem;  /* Adjust title size */
+    }
+}
